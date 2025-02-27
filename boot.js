@@ -23,15 +23,15 @@ const password = process.env.PASSWORD;
 
     await page.keyboard.press("Enter");
 
-    await page.waitForSelector('input[autocomplete="on"]', {
-      visible: true,
-      timeout: 60000,
-    });
-    await page.type('input[autocomplete="on"]', "your_username_account", {
-      delay: 150,
-    });
+    // await page.waitForSelector('input[autocomplete="on"]', {
+    //   visible: true,
+    //   timeout: 60000,
+    // });
+    // await page.type('input[autocomplete="on"]', "your_username_account", {
+    //   delay: 150,
+    // });
 
-    await page.keyboard.press("Enter");
+    // await page.keyboard.press("Enter");
 
     await page.waitForSelector('input[autocomplete="current-password"]', {
       visible: true,
