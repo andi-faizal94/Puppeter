@@ -82,8 +82,7 @@ const fs = require("fs");
 
         csvData += `"${rowNumber}","${title}","${date}","${imgSrc}"\n`;
 
-        rowNumber++
-
+        rowNumber++;
       } catch (error) {
         console.error("Error scraping element:", error);
       }
@@ -92,13 +91,13 @@ const fs = require("fs");
 
   await scrapePage("https://nasional.kompas.com");
 
-  for (let p = 2; p < 10; p++) {
+  for (let p = 2; p <= 10; p++) {
     await scrapePage(`https://nasional.kompas.com/?page=${p}`);
   }
 
   const csvFilePath = "./collection/data.csv";
   fs.writeFileSync(csvFilePath, csvData);
-  console.log("Data export to CSV In Folder",csvFilePath)
+  console.log("Data export to CSV In Folder", csvFilePath);
 
   await browser.close();
 })();
